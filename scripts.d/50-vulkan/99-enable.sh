@@ -3,7 +3,7 @@
 SCRIPT_SKIP="1"
 
 ffbuild_enabled() {
-    [[ $TARGET != linux* ]] && return -1
+    [[ $ADDINS_STR == *4.4* ]] && return -1
     return 0
 }
 
@@ -12,6 +12,5 @@ ffbuild_dockerdl() {
 }
 
 ffbuild_dockerbuild() {
-    rm "$FFBUILD_PREFIX"/lib/lib*.so* || true
-    rm "$FFBUILD_PREFIX"/lib/*.la || true
+    return 0
 }

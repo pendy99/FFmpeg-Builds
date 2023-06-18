@@ -1,15 +1,14 @@
 #!/bin/bash
 
 SCRIPT_REPO="https://github.com/Haivision/srt.git"
-SCRIPT_COMMIT="39822840c506d72cef5a742d28f32ea28e144345"
+SCRIPT_COMMIT="3cefedefe91fca543083d260d1ed32efd2e7cba5"
 
 ffbuild_enabled() {
     return 0
 }
 
 ffbuild_dockerbuild() {
-    git-mini-clone "$SCRIPT_REPO" "$SCRIPT_COMMIT" srt
-    cd srt
+    cd "$FFBUILD_DLDIR/$SELF"
 
     mkdir build && cd build
 

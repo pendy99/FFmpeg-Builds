@@ -1,15 +1,14 @@
 #!/bin/bash
 
 SCRIPT_REPO="https://gitlab.freedesktop.org/fontconfig/fontconfig.git"
-SCRIPT_COMMIT="04546f18768e1ce57c24743035118b3eabbd4181"
+SCRIPT_COMMIT="f0612537cb55ef97835914b0c64497034c60b8c9"
 
 ffbuild_enabled() {
     return 0
 }
 
 ffbuild_dockerbuild() {
-    git-mini-clone "$SCRIPT_REPO" "$SCRIPT_COMMIT" fc
-    cd fc
+    cd "$FFBUILD_DLDIR/$SELF"
 
     ./autogen.sh --noconf
 

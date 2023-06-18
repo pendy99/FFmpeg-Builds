@@ -1,15 +1,14 @@
 #!/bin/bash
 
 SCRIPT_REPO="https://github.com/libsndfile/libsamplerate.git"
-SCRIPT_COMMIT="215c75ea9d6e1685893716100ddae3ebfc9f5cfe"
+SCRIPT_COMMIT="22bd06eb114850ebe31981eb794d150a95439fef"
 
 ffbuild_enabled() {
     return 0
 }
 
 ffbuild_dockerbuild() {
-    git-mini-clone "$SCRIPT_REPO" "$SCRIPT_COMMIT" libsr
-    cd libsr
+    cd "$FFBUILD_DLDIR/$SELF"
 
     mkdir build
     cd build

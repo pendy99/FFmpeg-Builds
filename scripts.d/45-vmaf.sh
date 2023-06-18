@@ -1,15 +1,14 @@
 #!/bin/bash
 
 SCRIPT_REPO="https://github.com/Netflix/vmaf.git"
-SCRIPT_COMMIT="d48ab28eebac8276369cfebeb7cfcbfeb28408c2"
+SCRIPT_COMMIT="5ee0051cd7b1337e033558910c30525d73edfd76"
 
 ffbuild_enabled() {
     return 0
 }
 
 ffbuild_dockerbuild() {
-    git-mini-clone "$SCRIPT_REPO" "$SCRIPT_COMMIT" vmaf
-    cd vmaf
+    cd "$FFBUILD_DLDIR/$SELF"
 
     # Kill build of unused and broken tools
     echo > libvmaf/tools/meson.build

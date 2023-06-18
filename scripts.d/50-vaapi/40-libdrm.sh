@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SCRIPT_REPO="https://gitlab.freedesktop.org/mesa/drm.git"
-SCRIPT_COMMIT="d1681af05471176215ad3d437249c38768dc959f"
+SCRIPT_COMMIT="98e1db501173303e58ef6a1def94ab7a2d84afc1"
 
 ffbuild_enabled() {
     [[ $TARGET != linux* ]] && return -1
@@ -9,8 +9,7 @@ ffbuild_enabled() {
 }
 
 ffbuild_dockerbuild() {
-    git-mini-clone "$SCRIPT_REPO" "$SCRIPT_COMMIT" libdrm
-    cd libdrm
+    cd "$FFBUILD_DLDIR/$SELF"
 
     mkdir build && cd build
 
